@@ -1,66 +1,219 @@
-🧠 Симптомы и синдромы наркотической и алкогольной зависимости
-Комплексный обзор 2020–2025 | МКБ-10/11 · DSM-5 · Большой наркоманический синдром · Статистика ВОЗ и РФ
-📊 Обзор и статистика
-🔬 Синдромы зависимости
-📈 Стадии развития
-💊 Виды ПАВ
-⚠️ Последствия
-📋 Классификации
-💀
-3,2 млн
-Смертей в год в мире от алкоголя и наркотиков (ВОЗ, 2019/2024)
-🍺
-2,6 млн
-Смертей от алкоголя в год = 4,7% всей мировой смертности
-👥
-400 млн
-Людей с алкогольным расстройством в мире (ВОЗ)
-💉
-6 млн
-Регулярно употребляют наркотики в России (2024)
-🏥
-1,05 млн
-Диагностированных алкоголизмом на учёте в РФ (2022)
-📊
-8,41 л
-Потребление алкоголя на душу населения в РФ (март 2025)
-📉 Потребление алкоголя на душу населения в РФ (л этанола)
-2019
-9,06 л
-2020
-9,06 л
-2021
-8,82 л (−2,7%)
-2022
-8,62 л (−2,3%)
-2023
-8,49 л (−1,5%)
-2024
-8,38 л (−1,3%)
-2025*
-8,41 л (+2,4% ↑)
-* Данные ЦНИИОИЗ Минздрава, март 2025. Впервые за 5 лет тренд на снижение переломлен.
-⚰️ Структура смертности от алкоголя в мире (ВОЗ)
-НИЗ (рак, ССЗ)
-1,6 млн (61,5%)
-Травмы
-724 тыс. (27,8%)
-Инфекции
-284 тыс. (10,9%)
-20%
-смертей от ССЗ связаны с алкоголем в РФ
-60%
-смертей от внешних причин
-70%
-смертей от цирроза печени
-Данные доклада ВОЗ 2024 г. (на основе данных 2019).
-🇷🇺 Наркоситуация в России (2020–2024)
-218,5 тыс.
-На учёте с наркоманией (конец 2022)
-7 900+
-Смертей от отравления наркотиками (2024)
-15,9
-Отравлений наркотиками на 100 тыс. (2024)
-75,5 тыс.
-Полинаркомания и другие ПАВ (2024)
-Росстат, ННЦН, Роспотребнадзор. Рост числа лиц с зависимостью от неустановленных стимуляторов в 5,5 раз с 2010 г. (4,2 → 24 тыс.).
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дашборд наркологического здоровья</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .icon {
+            font-size: 2em;
+            margin-right: 15px;
+        }
+        .card-title {
+            font-size: 1.1em;
+            color: #333;
+            font-weight: 600;
+        }
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 10px 0;
+        }
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .info-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .info-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .info-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .info-item strong {
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💊 Наркологическое здоровье</h1>
+            <p class="subtitle">Статистика и мониторинг наркологической ситуации в РФ</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">☠️</span>
+                    <span class="card-title">Смертность в год</span>
+                </div>
+                <div class="stat-value">3,2 млн</div>
+                <div class="stat-label">Смертей в год от алкоголя и наркотиков (ВОЗ, 2019/2024)</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">💀</span>
+                    <span class="card-title">Мировая смертность</span>
+                </div>
+                <div class="stat-value">2,6 млн</div>
+                <div class="stat-label">Смертей от алкоголя в год (4,7% всей мировой смертности)</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">😵</span>
+                    <span class="card-title">Люди с расстройствами</span>
+                </div>
+                <div class="stat-value">400 млн</div>
+                <div class="stat-label">Людей с алкогольными расстройствами в мире (ВОЗ)</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">💊</span>
+                    <span class="card-title">Употребление наркотиков</span>
+                </div>
+                <div class="stat-value">6 млн</div>
+                <div class="stat-label">Регулярно употребляют наркотики в России (2024)</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">📊</span>
+                    <span class="card-title">Диагностированные</span>
+                </div>
+                <div class="stat-value">1,85 млн</div>
+                <div class="stat-label">Диагностированных алкоголизмом на учёте в РФ (2022)</div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon">🍺</span>
+                    <span class="card-title">Потребление алкоголя</span>
+                </div>
+                <div class="stat-value">8,41 л</div>
+                <div class="stat-label">Потребление алкоголя на душу населения в РФ (март 2025)</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 70%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>📈 Динамика потребления алкоголя в России</h2>
+            
+            <div class="info-item">
+                <strong>2019</strong>
+                9,86 л - Потребление алкоголя на душу населения
+            </div>
+            
+            <div class="info-item">
+                <strong>2020</strong>
+                9,86 л
+            </div>
+            
+            <div class="info-item">
+                <strong>2021</strong>
+                9,86 л
+            </div>
+            
+            <div class="info-item">
+                <strong>2022</strong>
+                8,82 л (↓2,7%)
+            </div>
+            
+            <div class="info-item">
+                <strong>2023</strong>
+                8,62 л (↓2,3%)
+            </div>
+            
+            <div class="info-item">
+                <strong>2024</strong>
+                8,49 л (↓1,5%)
+            </div>
+            
+            <div class="info-item">
+                <strong>2025+</strong>
+                8,41 л (+2,4% ↑) - Прогноз на основании данных ЦНИИОЗ Минздрава (март 2025)
+            </div>
+        </div>
+    </div>
+</body>
+</html>

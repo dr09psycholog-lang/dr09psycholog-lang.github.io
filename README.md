@@ -1,0 +1,710 @@
+[addiction-dashboard index.html](https://github.com/user-attachments/files/25824011/addiction-dashboard.index.html)
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Симптомы и синдромы зависимости — Обзор 2020–2025</title>
+    <style>
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(31, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-teal-300: rgba(50, 184, 198, 1);
+            --color-teal-400: rgba(45, 166, 178, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            --color-teal-800: rgba(41, 150, 161, 1);
+            --color-red-400: rgba(255, 84, 89, 1);
+            --color-red-500: rgba(192, 21, 47, 1);
+            --color-orange-400: rgba(230, 129, 97, 1);
+            --color-orange-500: rgba(168, 75, 47, 1);
+            --color-brown-600-rgb: 94, 82, 64;
+            --color-teal-500-rgb: 33, 128, 141;
+            --color-slate-900-rgb: 19, 52, 59;
+            --color-slate-500-rgb: 98, 108, 113;
+            --color-red-500-rgb: 192, 21, 47;
+            --color-red-400-rgb: 255, 84, 89;
+            --color-orange-500-rgb: 168, 75, 47;
+            --color-orange-400-rgb: 230, 129, 97;
+            --color-bg-1: rgba(59, 130, 246, 0.08);
+            --color-bg-2: rgba(245, 158, 11, 0.08);
+            --color-bg-3: rgba(34, 197, 94, 0.08);
+            --color-bg-4: rgba(239, 68, 68, 0.08);
+            --color-bg-5: rgba(147, 51, 234, 0.08);
+            --color-bg-6: rgba(249, 115, 22, 0.08);
+            --color-bg-7: rgba(236, 72, 153, 0.08);
+            --color-bg-8: rgba(6, 182, 212, 0.08);
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-cream-100);
+            --color-text: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-primary-active: var(--color-teal-700);
+            --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-btn-primary-text: var(--color-cream-50);
+            --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-error: var(--color-red-500);
+            --color-success: var(--color-teal-500);
+            --color-warning: var(--color-orange-500);
+            --color-info: var(--color-slate-500);
+            --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.04), 0 2px 4px -1px rgba(0,0,0,0.02);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.04), 0 4px 6px -2px rgba(0,0,0,0.02);
+            --radius-sm: 6px;
+            --radius-base: 8px;
+            --radius-md: 10px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+            --font-family-base: "FKGroteskNeue","Geist","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+            --font-family-mono: "Berkeley Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+            --duration-normal: 250ms;
+            --ease-standard: cubic-bezier(0.16,1,0.3,1);
+            --color-gray-400-rgb: 119, 124, 124;
+            --color-teal-300-rgb: 50, 184, 198;
+            --color-gray-300-rgb: 167, 169, 169;
+            --color-gray-200-rgb: 245, 245, 245;
+            --color-success-rgb: 33, 128, 141;
+            --color-error-rgb: 192, 21, 47;
+            --color-warning-rgb: 168, 75, 47;
+            --color-info-rgb: 98, 108, 113;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: var(--color-charcoal-700);
+                --color-surface: var(--color-charcoal-800);
+                --color-text: var(--color-gray-200);
+                --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+                --color-primary: var(--color-teal-300);
+                --color-primary-hover: var(--color-teal-400);
+                --color-primary-active: var(--color-teal-800);
+                --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+                --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+                --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+                --color-error: var(--color-red-400);
+                --color-success: var(--color-teal-300);
+                --color-warning: var(--color-orange-400);
+                --color-info: var(--color-gray-300);
+                --color-btn-primary-text: var(--color-slate-900);
+                --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+                --color-bg-1: rgba(29, 78, 216, 0.15);
+                --color-bg-2: rgba(180, 83, 9, 0.15);
+                --color-bg-3: rgba(21, 128, 61, 0.15);
+                --color-bg-4: rgba(185, 28, 28, 0.15);
+                --color-bg-5: rgba(107, 33, 168, 0.15);
+                --color-bg-6: rgba(194, 65, 12, 0.15);
+                --color-bg-7: rgba(190, 24, 93, 0.15);
+                --color-bg-8: rgba(8, 145, 178, 0.15);
+            }
+        }
+        @font-face {
+            font-family: 'FKGroteskNeue';
+            src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2') format('woff2');
+        }
+        html { font-size: 14px; font-family: var(--font-family-base); line-height: 1.5; color: var(--color-text); background-color: var(--color-background); -webkit-font-smoothing: antialiased; box-sizing: border-box; }
+        body { margin: 0; padding: 0; }
+        *, *::before, *::after { box-sizing: inherit; }
+
+        .dashboard { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .dashboard-header { text-align: center; margin-bottom: 32px; padding: 32px 20px; background: linear-gradient(135deg, rgba(var(--color-teal-500-rgb), 0.1), rgba(var(--color-slate-900-rgb), 0.05)); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); }
+        .dashboard-header h1 { font-size: 28px; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.02em; }
+        .dashboard-header p { color: var(--color-text-secondary); margin: 0; font-size: 15px; }
+
+        .nav-tabs { display: flex; gap: 4px; margin-bottom: 24px; padding: 4px; background: var(--color-secondary); border-radius: var(--radius-base); overflow-x: auto; }
+        .nav-tab { padding: 10px 18px; border: none; background: transparent; color: var(--color-text-secondary); cursor: pointer; border-radius: var(--radius-sm); font-size: 13px; font-weight: 500; white-space: nowrap; transition: all var(--duration-normal) var(--ease-standard); font-family: var(--font-family-base); }
+        .nav-tab:hover { background: rgba(var(--color-brown-600-rgb), 0.08); color: var(--color-text); }
+        .nav-tab.active { background: var(--color-surface); color: var(--color-primary); box-shadow: var(--shadow-sm); }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .stat-card { background: var(--color-surface); border: 1px solid var(--color-card-border); border-radius: var(--radius-lg); padding: 20px; text-align: center; box-shadow: var(--shadow-sm); transition: box-shadow var(--duration-normal); }
+        .stat-card:hover { box-shadow: var(--shadow-md); }
+        .stat-card .stat-icon { font-size: 28px; margin-bottom: 8px; }
+        .stat-card .stat-value { font-size: 26px; font-weight: 600; color: var(--color-primary); margin-bottom: 4px; }
+        .stat-card .stat-label { font-size: 12px; color: var(--color-text-secondary); line-height: 1.4; }
+        .stat-card.danger .stat-value { color: var(--color-error); }
+        .stat-card.warning .stat-value { color: var(--color-warning); }
+
+        .card { background: var(--color-surface); border: 1px solid var(--color-card-border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 20px; box-shadow: var(--shadow-sm); }
+        .card h2 { font-size: 18px; font-weight: 600; margin: 0 0 16px; display: flex; align-items: center; gap: 8px; }
+        .card h3 { font-size: 15px; font-weight: 600; margin: 16px 0 10px; }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+        @media (max-width: 900px) { .two-col, .three-col { grid-template-columns: 1fr; } }
+
+        .syndrome-flow { display: flex; flex-direction: column; gap: 0; position: relative; }
+        .syndrome-step { display: flex; align-items: flex-start; gap: 16px; padding: 16px; position: relative; }
+        .syndrome-step::before { content: ''; position: absolute; left: 31px; top: 52px; bottom: -16px; width: 2px; background: var(--color-border); }
+        .syndrome-step:last-child::before { display: none; }
+        .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary); color: var(--color-btn-primary-text); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; flex-shrink: 0; z-index: 1; }
+        .step-content h4 { margin: 0 0 4px; font-size: 14px; font-weight: 600; }
+        .step-content p { margin: 0; font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+
+        .symptom-list { list-style: none; padding: 0; margin: 0; }
+        .symptom-list li { padding: 8px 12px; margin-bottom: 6px; background: var(--color-bg-1); border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
+        .symptom-list li::before { content: '•'; color: var(--color-primary); font-weight: bold; flex-shrink: 0; }
+        .symptom-list.danger li { background: var(--color-bg-4); }
+        .symptom-list.danger li::before { color: var(--color-error); }
+        .symptom-list.warning li { background: var(--color-bg-6); }
+        .symptom-list.warning li::before { color: var(--color-warning); }
+        .symptom-list.success li { background: var(--color-bg-3); }
+        .symptom-list.success li::before { color: var(--color-success); }
+
+        .badge { display: inline-flex; padding: 3px 10px; border-radius: var(--radius-full); font-size: 11px; font-weight: 600; }
+        .badge-teal { background: rgba(var(--color-teal-500-rgb), 0.15); color: var(--color-primary); }
+        .badge-red { background: rgba(var(--color-red-500-rgb), 0.15); color: var(--color-error); }
+        .badge-orange { background: rgba(var(--color-orange-500-rgb), 0.15); color: var(--color-warning); }
+        .badge-info { background: rgba(var(--color-info-rgb), 0.15); color: var(--color-info); }
+
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { background: var(--color-secondary); text-align: left; padding: 10px 12px; font-weight: 600; font-size: 12px; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.03em; }
+        td { padding: 10px 12px; border-bottom: 1px solid var(--color-card-border); vertical-align: top; line-height: 1.4; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover td { background: rgba(var(--color-teal-500-rgb), 0.03); }
+
+        .chart-bar-container { margin: 12px 0; }
+        .chart-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .chart-bar-label { width: 50px; font-size: 13px; font-weight: 500; text-align: right; flex-shrink: 0; }
+        .chart-bar-track { flex: 1; height: 28px; background: var(--color-secondary); border-radius: var(--radius-sm); overflow: hidden; position: relative; }
+        .chart-bar-fill { height: 100%; border-radius: var(--radius-sm); transition: width 1s var(--ease-standard); display: flex; align-items: center; padding: 0 10px; }
+        .chart-bar-value { font-size: 12px; font-weight: 600; color: var(--color-btn-primary-text); white-space: nowrap; }
+
+        .stage-card { padding: 16px; border-radius: var(--radius-md); margin-bottom: 12px; border-left: 4px solid; }
+        .stage-card.stage-1 { background: var(--color-bg-3); border-color: var(--color-success); }
+        .stage-card.stage-2 { background: var(--color-bg-2); border-color: var(--color-warning); }
+        .stage-card.stage-3 { background: var(--color-bg-4); border-color: var(--color-error); }
+        .stage-card h4 { margin: 0 0 8px; font-size: 14px; }
+        .stage-card p { margin: 0; font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+
+        .infographic-box { padding: 20px; background: linear-gradient(135deg, var(--color-bg-1), var(--color-bg-8)); border-radius: var(--radius-lg); border: 1px solid var(--color-card-border); margin-bottom: 20px; }
+        .infographic-box h3 { margin: 0 0 16px; font-size: 16px; text-align: center; }
+
+        .organ-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+        .organ-item { text-align: center; padding: 16px 12px; background: var(--color-surface); border-radius: var(--radius-md); border: 1px solid var(--color-card-border); }
+        .organ-item .organ-icon { font-size: 32px; margin-bottom: 6px; }
+        .organ-item .organ-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+        .organ-item .organ-desc { font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; }
+
+        .mkb-code { font-family: var(--font-family-mono); font-size: 12px; background: var(--color-secondary); padding: 2px 8px; border-radius: var(--radius-sm); font-weight: 600; }
+
+        .comparison-highlight { display: flex; gap: 12px; margin: 16px 0; flex-wrap: wrap; }
+        .highlight-item { flex: 1; min-width: 140px; padding: 12px; background: var(--color-surface); border-radius: var(--radius-md); text-align: center; border: 1px solid var(--color-card-border); }
+        .highlight-item .hi-val { font-size: 22px; font-weight: 700; color: var(--color-primary); }
+        .highlight-item .hi-label { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+
+        .timeline { position: relative; padding-left: 24px; }
+        .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--color-border); }
+        .timeline-item { position: relative; margin-bottom: 20px; }
+        .timeline-item::before { content: ''; position: absolute; left: -20px; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: var(--color-primary); border: 2px solid var(--color-surface); }
+        .timeline-item h4 { margin: 0 0 4px; font-size: 14px; }
+        .timeline-item p { margin: 0; font-size: 13px; color: var(--color-text-secondary); line-height: 1.4; }
+
+        .source-note { font-size: 11px; color: var(--color-text-secondary); margin-top: 16px; font-style: italic; padding-top: 12px; border-top: 1px solid var(--color-card-border); }
+    </style>
+</head>
+<body>
+<div class="dashboard">
+    <header class="dashboard-header">
+        <h1>🧠 Симптомы и синдромы наркотической и алкогольной зависимости</h1>
+        <p>Комплексный обзор 2020–2025 | МКБ-10/11 · DSM-5 · Большой наркоманический синдром · Статистика ВОЗ и РФ</p>
+    </header>
+
+    <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab active" onclick="switchTab('overview')" role="tab">📊 Обзор и статистика</button>
+        <button class="nav-tab" onclick="switchTab('syndromes')" role="tab">🔬 Синдромы зависимости</button>
+        <button class="nav-tab" onclick="switchTab('stages')" role="tab">📈 Стадии развития</button>
+        <button class="nav-tab" onclick="switchTab('substances')" role="tab">💊 Виды ПАВ</button>
+        <button class="nav-tab" onclick="switchTab('consequences')" role="tab">⚠️ Последствия</button>
+        <button class="nav-tab" onclick="switchTab('classifications')" role="tab">📋 Классификации</button>
+    </nav>
+
+    <!-- TAB 1: Overview & Statistics -->
+    <div id="tab-overview" class="tab-content active">
+        <div class="stats-grid">
+            <div class="stat-card danger">
+                <div class="stat-icon">💀</div>
+                <div class="stat-value">3,2 млн</div>
+                <div class="stat-label">Смертей в год в мире от алкоголя и наркотиков (ВОЗ, 2019/2024)</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-icon">🍺</div>
+                <div class="stat-value">2,6 млн</div>
+                <div class="stat-label">Смертей от алкоголя в год = 4,7% всей мировой смертности</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-value">400 млн</div>
+                <div class="stat-label">Людей с алкогольным расстройством в мире (ВОЗ)</div>
+            </div>
+            <div class="stat-card danger">
+                <div class="stat-icon">💉</div>
+                <div class="stat-value">6 млн</div>
+                <div class="stat-label">Регулярно употребляют наркотики в России (2024)</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-icon">🏥</div>
+                <div class="stat-value">1,05 млн</div>
+                <div class="stat-label">Диагностированных алкоголизмом на учёте в РФ (2022)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-value">8,41 л</div>
+                <div class="stat-label">Потребление алкоголя на душу населения в РФ (март 2025)</div>
+            </div>
+        </div>
+
+        <div class="two-col">
+            <div class="card">
+                <h2>📉 Потребление алкоголя на душу населения в РФ (л этанола)</h2>
+                <div class="chart-bar-container">
+                    <div class="chart-bar-row"><div class="chart-bar-label">2019</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:100%;background:linear-gradient(90deg,var(--color-teal-500),var(--color-teal-700))"><span class="chart-bar-value">9,06 л</span></div></div></div>
+                    <div class="chart-bar-row"><div class="chart-bar-label">2020</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:100%;background:linear-gradient(90deg,var(--color-teal-500),var(--color-teal-700))"><span class="chart-bar-value">9,06 л</span></div></div></div>
+                    <div class="chart-bar-row"><div class="chart-bar-label">2021</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:97.4%;background:linear-gradient(90deg,var(--color-teal-400),var(--color-teal-600))"><span class="chart-bar-value">8,82 л (−2,7%)</span></div></div></div>
+                    <div class="chart-bar-row"><div class="chart-bar-label">2022</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:95.1%;background:linear-gradient(90deg,var(--color-teal-400),var(--color-teal-600))"><span class="chart-bar-value">8,62 л (−2,3%)</span></div></div></div>
+                    <div class="chart-bar-row"><div class="chart-bar-label">2023</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:93.7%;background:linear-gradient(90deg,var(--color-teal-300),var(--color-teal-500))"><span class="chart-bar-value">8,49 л (−1,5%)</span></div></div></div>
+                    <div class="chart-bar-row"><div class="chart-bar-label">2024</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:92.5%;background:linear-gradient(90deg,var(--color-teal-300),var(--color-teal-500))"><span class="chart-bar-value">8,38 л (−1,3%)</span></div></div></div>
+                    <div class="chart-bar-row"><div class="chart-bar-label">2025*</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:92.8%;background:linear-gradient(90deg, rgba(var(--color-orange-500-rgb),0.8), rgba(var(--color-red-500-rgb),0.8))"><span class="chart-bar-value">8,41 л (+2,4% ↑)</span></div></div></div>
+                </div>
+                <p class="source-note">* Данные ЦНИИОИЗ Минздрава, март 2025. Впервые за 5 лет тренд на снижение переломлен.</p>
+            </div>
+            <div class="card">
+                <h2>⚰️ Структура смертности от алкоголя в мире (ВОЗ)</h2>
+                <div class="chart-bar-container">
+                    <div class="chart-bar-row"><div class="chart-bar-label" style="width:110px">НИЗ (рак, ССЗ)</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:61.5%;background:linear-gradient(90deg, rgba(var(--color-red-500-rgb),0.7), rgba(var(--color-red-500-rgb),0.9))"><span class="chart-bar-value">1,6 млн (61,5%)</span></div></div></div>
+                    <div class="chart-bar-row"><div class="chart-bar-label" style="width:110px">Травмы</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:27.8%;background:linear-gradient(90deg, rgba(var(--color-orange-500-rgb),0.7), rgba(var(--color-orange-500-rgb),0.9))"><span class="chart-bar-value">724 тыс. (27,8%)</span></div></div></div>
+                    <div class="chart-bar-row"><div class="chart-bar-label" style="width:110px">Инфекции</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:10.9%;background:linear-gradient(90deg, rgba(var(--color-teal-500-rgb),0.7), rgba(var(--color-teal-500-rgb),0.9))"><span class="chart-bar-value">284 тыс. (10,9%)</span></div></div></div>
+                </div>
+                <div class="comparison-highlight" style="margin-top:16px">
+                    <div class="highlight-item"><div class="hi-val">20%</div><div class="hi-label">смертей от ССЗ связаны с алкоголем в РФ</div></div>
+                    <div class="highlight-item"><div class="hi-val">60%</div><div class="hi-label">смертей от внешних причин</div></div>
+                    <div class="highlight-item"><div class="hi-val">70%</div><div class="hi-label">смертей от цирроза печени</div></div>
+                </div>
+                <p class="source-note">Данные доклада ВОЗ 2024 г. (на основе данных 2019).</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🇷🇺 Наркоситуация в России (2020–2024)</h2>
+            <div class="comparison-highlight">
+                <div class="highlight-item"><div class="hi-val">218,5 тыс.</div><div class="hi-label">На учёте с наркоманией (конец 2022)</div></div>
+                <div class="highlight-item"><div class="hi-val">7 900+</div><div class="hi-label">Смертей от отравления наркотиками (2024)</div></div>
+                <div class="highlight-item"><div class="hi-val">15,9</div><div class="hi-label">Отравлений наркотиками на 100 тыс. (2024)</div></div>
+                <div class="highlight-item"><div class="hi-val">75,5 тыс.</div><div class="hi-label">Полинаркомания и другие ПАВ (2024)</div></div>
+            </div>
+            <p class="source-note">Росстат, ННЦН, Роспотребнадзор. Рост числа лиц с зависимостью от неустановленных стимуляторов в 5,5 раз с 2010 г. (4,2 → 24 тыс.).</p>
+        </div>
+    </div>
+
+    <!-- TAB 2: Syndromes -->
+    <div id="tab-syndromes" class="tab-content">
+        <div class="infographic-box">
+            <h3>🧬 Большой наркоманический синдром (И.Н. Пятницкая)</h3>
+            <p style="text-align:center;font-size:13px;color:var(--color-text-secondary);margin-bottom:16px">Три основных компонента, формирующих клиническую картину наркомании/алкоголизма</p>
+            <div class="three-col">
+                <div class="card" style="margin-bottom:0;border-left:4px solid var(--color-primary)">
+                    <h3 style="margin-top:0">1. Синдром измененной реактивности</h3>
+                    <ul class="symptom-list">
+                        <li>Изменение толерантности (рост → плато → снижение)</li>
+                        <li>Исчезновение защитных реакций (рвотный рефлекс и др.)</li>
+                        <li>Изменение формы потребления (от эпизодического к систематическому)</li>
+                        <li>Изменение формы опьянения (утрата эйфории → тонизирующий эффект)</li>
+                    </ul>
+                    <div style="margin-top:8px"><span class="badge badge-teal">Наиболее ранний синдром</span></div>
+                </div>
+                <div class="card" style="margin-bottom:0;border-left:4px solid var(--color-warning)">
+                    <h3 style="margin-top:0">2. Синдром зависимости</h3>
+                    <h4 style="font-size:13px;margin-top:12px">Психическая зависимость:</h4>
+                    <ul class="symptom-list warning">
+                        <li>Обсессивное (навязчивое) влечение к ПАВ</li>
+                        <li>Психический комфорт только в интоксикации</li>
+                    </ul>
+                    <h4 style="font-size:13px;margin-top:12px">Физическая зависимость:</h4>
+                    <ul class="symptom-list danger">
+                        <li>Компульсивное (непреодолимое) влечение</li>
+                        <li>Абстинентный синдром при отмене</li>
+                        <li>Физический комфорт только в интоксикации</li>
+                    </ul>
+                </div>
+                <div class="card" style="margin-bottom:0;border-left:4px solid var(--color-error)">
+                    <h3 style="margin-top:0">3. Синдром последствий</h3>
+                    <ul class="symptom-list danger">
+                        <li>Соматические: поражение печени, сердца, ЖКТ, лёгких</li>
+                        <li>Неврологические: полинейропатия, энцефалопатия</li>
+                        <li>Психические: деградация личности, когнитивный дефицит</li>
+                        <li>Социальные: распад семьи, потеря работы, криминализация</li>
+                    </ul>
+                    <div style="margin-top:8px"><span class="badge badge-red">Необратимые изменения</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="two-col">
+            <div class="card">
+                <h2>🔄 Динамика толерантности</h2>
+                <div class="syndrome-flow">
+                    <div class="syndrome-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>Рост толерантности</h4>
+                            <p>Организм «привыкает» к ПАВ, требуется всё большая доза. Опиаты: рост в 100–200 раз, барбитураты: в 5–10 раз, седативные: в 8–12 раз.</p>
+                        </div>
+                    </div>
+                    <div class="syndrome-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>Плато толерантности</h4>
+                            <p>Максимальные дозы, превышающие смертельные для неупотребляющих. Устойчивый высокий уровень потребления.</p>
+                        </div>
+                    </div>
+                    <div class="syndrome-step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>Снижение толерантности</h4>
+                            <p>Истощение организма, прежние дозы вызывают передозировку. Приём «для нормы», а не для эйфории. Высокий риск смерти.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2>⚡ Абстинентный синдром (синдром отмены)</h2>
+                <h3>Психические компоненты:</h3>
+                <ul class="symptom-list">
+                    <li>Тревога, дисфория, психомоторное возбуждение</li>
+                    <li>Бессонница, кошмарные сновидения</li>
+                    <li>Раздражительность, агрессия, депрессия</li>
+                    <li>Навязчивые мысли о дозе</li>
+                    <li>Нарушения памяти и концентрации</li>
+                </ul>
+                <h3>Вегетативно-соматические компоненты:</h3>
+                <ul class="symptom-list warning">
+                    <li>Тремор конечностей, судороги</li>
+                    <li>Потливость, озноб, тахикардия</li>
+                    <li>Тошнота, рвота, диарея</li>
+                    <li>Боли в мышцах и суставах</li>
+                    <li>Скачки артериального давления</li>
+                    <li>Слезотечение, насморк, чихание (при опиоидной абстиненции)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 3: Stages -->
+    <div id="tab-stages" class="tab-content">
+        <div class="two-col">
+            <div>
+                <div class="card">
+                    <h2>🍷 Стадии алкогольной зависимости</h2>
+                    <div class="stage-card stage-1">
+                        <h4>🟢 I стадия — Начальная (неврастеническая)</h4>
+                        <p><strong>Длительность:</strong> 1–5 лет<br>
+                        <strong>Ключевые признаки:</strong> формирование психической зависимости, утрата количественного контроля, исчезновение рвотного рефлекса, рост толерантности (до 0,5–0,75 л крепкого алкоголя за раз).<br>
+                        <strong>Симптомы:</strong> навязчивое влечение к спиртному, бессонница, усталость, вялость, раздражительность, вегетативные нарушения.</p>
+                    </div>
+                    <div class="stage-card stage-2">
+                        <h4>🟡 II стадия — Средняя (наркоманическая)</h4>
+                        <p><strong>Длительность:</strong> 5–15 лет<br>
+                        <strong>Ключевые признаки:</strong> физическая зависимость, абстинентный синдром, максимум толерантности (до 1,5 л крепких напитков), запои.<br>
+                        <strong>Симптомы:</strong> компульсивное влечение, похмелье с тремором, тахикардия, потливость, алкогольные палимпсесты (провалы памяти), снижение интеллекта, агрессия, гастрит, гепатит.</p>
+                    </div>
+                    <div class="stage-card stage-3">
+                        <h4>🔴 III стадия — Конечная (энцефалопатическая)</h4>
+                        <p><strong>Длительность:</strong> 5–10 лет (выживаемость)<br>
+                        <strong>Ключевые признаки:</strong> снижение толерантности, длительные запои, тяжёлая абстиненция, алкогольная энцефалопатия и деменция.<br>
+                        <strong>Симптомы:</strong> цирроз печени, кардиомиопатия, полинейропатия, деградация личности, утрата пространственно-временной ориентации, делирий.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <h2>💊 Стадии наркотической зависимости</h2>
+                    <div class="stage-card stage-1">
+                        <h4>🟢 I стадия — Начальная (1–6 мес)</h4>
+                        <p><strong>Тип зависимости:</strong> Психологическая<br>
+                        <strong>Ключевые признаки:</strong> навязчивое влечение к наркотику, рост дозы для эйфории, соматические изменения минимальны.<br>
+                        <strong>Симптомы:</strong> изменение интересов, сужение социальных контактов, первые симптомы отмены при перерывах, нарушение сна и аппетита.</p>
+                    </div>
+                    <div class="stage-card stage-2">
+                        <h4>🟡 II стадия — Хроническая (0,5–3 года)</h4>
+                        <p><strong>Тип зависимости:</strong> Физическая + Психическая<br>
+                        <strong>Ключевые признаки:</strong> выраженный абстинентный синдром («ломка»), потеря контроля над дозой, анозогнозия (отрицание болезни).<br>
+                        <strong>Симптомы:</strong> полиорганная недостаточность, психозы, социальная дезадаптация, приём «от ломки», а не для эйфории.</p>
+                    </div>
+                    <div class="stage-card stage-3">
+                        <h4>🔴 III стадия — Терминальная (3–7+ лет)</h4>
+                        <p><strong>Тип зависимости:</strong> Тотальная<br>
+                        <strong>Ключевые признаки:</strong> истощение, необратимое поражение ЦНС (деменция), снижение толерантности, приём «для нормы».<br>
+                        <strong>Симптомы:</strong> интеллектуальная деградация, кахексия, разрушение внутренних органов, высокий риск передозировки и суицида.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⚖️ Сравнение: переход между стадиями</h2>
+            <table>
+                <thead>
+                    <tr><th>Параметр</th><th>I стадия</th><th>II стадия</th><th>III стадия</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Тип влечения</strong></td><td>Обсессивное (навязчивое)</td><td>Компульсивное (непреодолимое)</td><td>Витальное (жизненная необходимость)</td></tr>
+                    <tr><td><strong>Толерантность</strong></td><td>Растёт</td><td>Плато (максимум)</td><td>Снижается</td></tr>
+                    <tr><td><strong>Абстиненция</strong></td><td>Лёгкая / отсутствует</td><td>Выраженная</td><td>Тяжёлая, жизнеугрожающая</td></tr>
+                    <tr><td><strong>Цель приёма</strong></td><td>Эйфория</td><td>Избежание ломки + эйфория</td><td>Поддержание минимальной нормы</td></tr>
+                    <tr><td><strong>Критика</strong></td><td>Частичная</td><td>Анозогнозия</td><td>Полное отсутствие</td></tr>
+                    <tr><td><strong>Соматика</strong></td><td>Минимальные нарушения</td><td>Полиорганная патология</td><td>Необратимые поражения</td></tr>
+                    <tr><td><strong>Личность</strong></td><td>Заострение черт</td><td>Деформация</td><td>Деградация и распад</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- TAB 4: Substances -->
+    <div id="tab-substances" class="tab-content">
+        <div class="card">
+            <h2>💊 Особенности зависимости по видам ПАВ</h2>
+            <table>
+                <thead>
+                    <tr><th style="width:14%">ПАВ</th><th style="width:10%">МКБ-10</th><th style="width:19%">Опьянение</th><th style="width:19%">Абстиненция</th><th style="width:19%">Скорость зависимости</th><th style="width:19%">Специфика</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Алкоголь</strong></td>
+                        <td><span class="mkb-code">F10</span></td>
+                        <td>Эйфория → расторможенность → оглушение → сопор</td>
+                        <td>Тремор, потливость, тахикардия, тошнота, тревога; возможен делирий (3–5 день)</td>
+                        <td>Средняя (5–10 лет до II стадии)</td>
+                        <td>Делирий с галлюцинациями, корсаковский психоз, энцефалопатия Вернике</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Опиоиды</strong></td>
+                        <td><span class="mkb-code">F11</span></td>
+                        <td>Эйфория, анальгезия, сужение зрачков, угнетение дыхания</td>
+                        <td>Тяжёлая «ломка»: боли, озноб, потливость, диарея, бессонница (через 6–7 ч)</td>
+                        <td>Очень высокая (3–15 инъекций)</td>
+                        <td>Толерантность ↑ в 100–200 раз; высокий риск передозировки</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Каннабис</strong></td>
+                        <td><span class="mkb-code">F12</span></td>
+                        <td>Расслабление, эйфория, нарушение восприятия, покраснение глаз</td>
+                        <td>Раздражительность, бессонница, снижение аппетита, тревога</td>
+                        <td>Средняя (месяцы–годы)</td>
+                        <td>Амотивационный синдром, риск психозов, когнитивное снижение</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Психостимуляторы</strong> (амфетамины, кокаин)</td>
+                        <td><span class="mkb-code">F14/F15</span></td>
+                        <td>Активность, эйфория, расширение зрачков, тахикардия, бессонница</td>
+                        <td>«Crash»: усталость, сонливость, депрессия, повышенный аппетит, тревога</td>
+                        <td>Высокая (психическая — быстро)</td>
+                        <td>Параноидные психозы, бред, агрессия; «амфетаминовый марафон»</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Седативные / снотворные</strong></td>
+                        <td><span class="mkb-code">F13</span></td>
+                        <td>Седация, расслабление, нарушение координации, невнятная речь</td>
+                        <td>Бессонница, тревога, судороги, делирий (опасна для жизни!)</td>
+                        <td>Средняя (недели–месяцы)</td>
+                        <td>Перекрёстная толерантность с алкоголем; абстиненция может быть фатальной</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Галлюциногены</strong></td>
+                        <td><span class="mkb-code">F16</span></td>
+                        <td>Иллюзии, галлюцинации, синестезия, деперсонализация</td>
+                        <td>Минимальная или отсутствует</td>
+                        <td>Низкая (преим. психическая)</td>
+                        <td>Флешбэки, HPPD, провокация скрытых психозов</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Синтетические (соли, мефедрон)</strong></td>
+                        <td><span class="mkb-code">F15/F19</span></td>
+                        <td>Выраженная эйфория, гиперактивность, бред, галлюцинации</td>
+                        <td>Тяжёлая депрессия, суицидальность, психозы, бессонница</td>
+                        <td>Крайне высокая (1–3 приёма)</td>
+                        <td>Рост в РФ в 5,5 раз (2010→2024); быстрая деградация</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>📊 Рост зависимости от неустановленных стимуляторов в РФ</h2>
+            <div class="chart-bar-container">
+                <div class="chart-bar-row"><div class="chart-bar-label">2010</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:17.7%;background:linear-gradient(90deg,rgba(var(--color-teal-500-rgb),0.7),rgba(var(--color-teal-500-rgb),0.9))"><span class="chart-bar-value">4,24 тыс.</span></div></div></div>
+                <div class="chart-bar-row"><div class="chart-bar-label">2024</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:100%;background:linear-gradient(90deg,rgba(var(--color-red-500-rgb),0.7),rgba(var(--color-red-500-rgb),0.9))"><span class="chart-bar-value">23,97 тыс. (×5,5)</span></div></div></div>
+            </div>
+            <div class="chart-bar-container" style="margin-top:16px">
+                <p style="font-size:13px;font-weight:600;margin-bottom:8px">Полинаркомания и другие ПАВ:</p>
+                <div class="chart-bar-row"><div class="chart-bar-label">2010</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:25.3%;background:linear-gradient(90deg,rgba(var(--color-orange-500-rgb),0.7),rgba(var(--color-orange-500-rgb),0.9))"><span class="chart-bar-value">19,1 тыс.</span></div></div></div>
+                <div class="chart-bar-row"><div class="chart-bar-label">2024</div><div class="chart-bar-track"><div class="chart-bar-fill" style="width:100%;background:linear-gradient(90deg,rgba(var(--color-red-500-rgb),0.7),rgba(var(--color-red-500-rgb),0.9))"><span class="chart-bar-value">75,5 тыс. (×4)</span></div></div></div>
+            </div>
+            <p class="source-note">Данные антинаркотической стратегии РФ, доклад 2025 г.</p>
+        </div>
+    </div>
+
+    <!-- TAB 5: Consequences -->
+    <div id="tab-consequences" class="tab-content">
+        <div class="infographic-box">
+            <h3>🫀 Поражение органов и систем при хронической зависимости</h3>
+            <div class="organ-grid">
+                <div class="organ-item"><div class="organ-icon">🧠</div><div class="organ-name">Головной мозг</div><div class="organ-desc">Энцефалопатия, деменция, корсаковский психоз, атрофия коры, когнитивный дефицит</div></div>
+                <div class="organ-item"><div class="organ-icon">🫁</div><div class="organ-name">Печень</div><div class="organ-desc">Жировой гепатоз → алкогольный гепатит → цирроз (70% смертей от цирроза связаны с алкоголем)</div></div>
+                <div class="organ-item"><div class="organ-icon">❤️</div><div class="organ-name">Сердце</div><div class="organ-desc">Кардиомиопатия, аритмии, инфаркты, гипертония (20% сердечно-сосудистых смертей)</div></div>
+                <div class="organ-item"><div class="organ-icon">🫃</div><div class="organ-name">ЖКТ</div><div class="organ-desc">Гастрит, язвы, панкреатит (60% смертей), эзофагит, варикоз вен пищевода</div></div>
+                <div class="organ-item"><div class="organ-icon">🦴</div><div class="organ-name">Нервная система</div><div class="organ-desc">Полинейропатия, невриты, судороги, нарушение координации, парезы</div></div>
+                <div class="organ-item"><div class="organ-icon">🛡️</div><div class="organ-name">Иммунитет</div><div class="organ-desc">Подавление лимфоцитов, хронические инфекции, пневмонии, абсцессы, ↑ риск ВИЧ/ТБ</div></div>
+                <div class="organ-item"><div class="organ-icon">🩸</div><div class="organ-name">Кровь</div><div class="organ-desc">Анемия, нарушение свёртываемости, тромбоцитопения</div></div>
+                <div class="organ-item"><div class="organ-icon">👤</div><div class="organ-name">Личность</div><div class="organ-desc">Деградация, утрата морали, эгоцентризм, асоциальное поведение, полный распад</div></div>
+            </div>
+        </div>
+
+        <div class="two-col">
+            <div class="card">
+                <h2>🧠 Алкогольные психозы</h2>
+                <div class="stage-card stage-3" style="border-color:var(--color-error)">
+                    <h4>Алкогольный делирий (белая горячка)</h4>
+                    <p>Возникает через 2–5 дней после прекращения приёма. Симптомы: яркие зрительные, слуховые, тактильные галлюцинации; помрачение сознания; тремор; тахикардия; нарушение ориентировки. Длительность: 5–7 дней (до 2 недель). Без помощи — угроза жизни.</p>
+                </div>
+                <div class="stage-card stage-2" style="border-color:var(--color-warning)">
+                    <h4>Алкогольный галлюциноз</h4>
+                    <p>Преимущественно слуховые галлюцинации при ясном сознании. Голоса угрожающего характера. Может перейти в хроническую форму.</p>
+                </div>
+                <div class="stage-card stage-1" style="border-color:var(--color-info)">
+                    <h4>Корсаковский психоз</h4>
+                    <p>Грубые нарушения памяти (фиксационная амнезия), конфабуляции (ложные воспоминания), дезориентировка. Связан с дефицитом витамина B1.</p>
+                </div>
+            </div>
+            <div class="card">
+                <h2>💉 Психозы при наркомании</h2>
+                <div class="stage-card stage-3" style="border-color:var(--color-error)">
+                    <h4>Стимуляторный психоз</h4>
+                    <p>Параноидный бред, слуховые и зрительные галлюцинации, агрессия. Особенно характерен для амфетаминов и синтетических катинонов (соли). Может сохраняться неделями после отмены.</p>
+                </div>
+                <div class="stage-card stage-2" style="border-color:var(--color-warning)">
+                    <h4>Каннабисный психоз</h4>
+                    <p>Острый психоз с бредом, тревогой, деперсонализацией. Риск повышен при употреблении высокопотентного каннабиса. У предрасположенных — может спровоцировать шизофрению.</p>
+                </div>
+                <div class="stage-card stage-1" style="border-color:var(--color-info)">
+                    <h4>Опиоидные расстройства</h4>
+                    <p>Психозы редки, но при передозировке — угнетение дыхания, кома. При длительном употреблении — выраженные когнитивные нарушения, апатия, депрессия.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 6: Classifications -->
+    <div id="tab-classifications" class="tab-content">
+        <div class="three-col">
+            <div class="card" style="border-top:4px solid var(--color-primary)">
+                <h2>📕 МКБ-10 (F10–F19)</h2>
+                <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:12px">Действующая в РФ классификация</p>
+                <table>
+                    <thead><tr><th>Код</th><th>Состояние</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="mkb-code">.0</span></td><td>Острая интоксикация</td></tr>
+                        <tr><td><span class="mkb-code">.1</span></td><td>Пагубное употребление</td></tr>
+                        <tr><td><span class="mkb-code">.2</span></td><td>Синдром зависимости</td></tr>
+                        <tr><td><span class="mkb-code">.3</span></td><td>Абстинентное состояние</td></tr>
+                        <tr><td><span class="mkb-code">.4</span></td><td>Абстиненция с делирием</td></tr>
+                        <tr><td><span class="mkb-code">.5</span></td><td>Психотическое расстройство</td></tr>
+                        <tr><td><span class="mkb-code">.6</span></td><td>Амнестический синдром</td></tr>
+                        <tr><td><span class="mkb-code">.7</span></td><td>Резидуальные расстройства</td></tr>
+                    </tbody>
+                </table>
+                <p style="font-size:12px;color:var(--color-text-secondary);margin-top:8px">F10 — алкоголь, F11 — опиоиды, F12 — каннабис, F13 — седативные, F14 — кокаин, F15 — стимуляторы, F16 — галлюциногены, F19 — полизависимость</p>
+            </div>
+            <div class="card" style="border-top:4px solid var(--color-warning)">
+                <h2>📙 МКБ-11 (6C40–6C4Z)</h2>
+                <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:12px">Новая классификация ВОЗ</p>
+                <table>
+                    <thead><tr><th>Код</th><th>Изменения</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="mkb-code">.0</span></td><td>Эпизод пагубного употребления</td></tr>
+                        <tr><td><span class="mkb-code">.1</span></td><td>Пагубное употребление (эпизодическое / постоянное)</td></tr>
+                        <tr><td><span class="mkb-code">.2</span></td><td>Зависимость (с указанием ремиссии)</td></tr>
+                        <tr><td><span class="mkb-code">.3</span></td><td>Интоксикация</td></tr>
+                        <tr><td><span class="mkb-code">.4</span></td><td>Синдром отмены</td></tr>
+                        <tr><td><span class="mkb-code">.5</span></td><td>Делирий</td></tr>
+                        <tr><td><span class="mkb-code">.6</span></td><td>Психотическое расстройство</td></tr>
+                        <tr><td><span class="mkb-code">.7</span></td><td>Другие расстройства</td></tr>
+                    </tbody>
+                </table>
+                <p style="font-size:12px;color:var(--color-text-secondary);margin-top:8px">Ключевое: добавлены стимуляторы (меткатинон), паттерны употребления, статусы ремиссии</p>
+            </div>
+            <div class="card" style="border-top:4px solid var(--color-error)">
+                <h2>📘 DSM-5 (APA, США)</h2>
+                <p style="font-size:13px;color:var(--color-text-secondary);margin-bottom:12px">11 критериев, 4 категории</p>
+                <h3 style="font-size:13px">Нарушение контроля:</h3>
+                <ul class="symptom-list" style="margin-bottom:8px">
+                    <li>Приём в больших количествах/дольше, чем планировалось</li>
+                    <li>Безуспешные попытки прекратить</li>
+                    <li>Много времени на поиск/употребление</li>
+                    <li>Крейвинг (сильное желание)</li>
+                </ul>
+                <h3 style="font-size:13px">Социальные нарушения:</h3>
+                <ul class="symptom-list warning" style="margin-bottom:8px">
+                    <li>Невыполнение обязанностей</li>
+                    <li>Продолжение несмотря на проблемы</li>
+                    <li>Отказ от прежних интересов</li>
+                </ul>
+                <h3 style="font-size:13px">Рискованное поведение:</h3>
+                <ul class="symptom-list danger" style="margin-bottom:8px">
+                    <li>Употребление в опасных ситуациях</li>
+                    <li>Продолжение при соматическом вреде</li>
+                </ul>
+                <h3 style="font-size:13px">Физическая зависимость:</h3>
+                <ul class="symptom-list" style="margin-bottom:8px">
+                    <li>Рост толерантности</li>
+                    <li>Синдром отмены</li>
+                </ul>
+                <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+                    <span class="badge badge-teal">2–3 = Лёгкая</span>
+                    <span class="badge badge-orange">4–5 = Умеренная</span>
+                    <span class="badge badge-red">6+ = Тяжёлая</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔄 Сравнение классификаций</h2>
+            <table>
+                <thead><tr><th>Параметр</th><th>МКБ-10</th><th>МКБ-11</th><th>DSM-5</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Разделение</strong></td><td>Пагубное употребление / Зависимость</td><td>Пагубное употребление / Зависимость (уточнённое)</td><td>Единый континуум: расстройство лёгкое–тяжёлое</td></tr>
+                    <tr><td><strong>Критерии зависимости</strong></td><td>≥3 из 6 за 12 месяцев</td><td>≥3 характерных признака</td><td>≥2 из 11 за 12 месяцев</td></tr>
+                    <tr><td><strong>Степень тяжести</strong></td><td>Не выделяется</td><td>Не выделяется формально</td><td>Mild / Moderate / Severe</td></tr>
+                    <tr><td><strong>Крейвинг</strong></td><td>Не включён явно</td><td>Включён</td><td>Включён как критерий</td></tr>
+                    <tr><td><strong>Статус ремиссии</strong></td><td>Ограниченно</td><td>Подробно (.20–.23)</td><td>Ранняя / стойкая ремиссия</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+function switchTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + tabId).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

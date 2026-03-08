@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Симптомы и синдромы в зависимости — Обзор 2020–2025 гг.</title>
+    <style>
+        :root {
+            --color-white: rgba(255, 255, 255, 1);
+            --color-black: rgba(0, 0, 0, 1);
+            --color-cream-50: rgba(252, 252, 249, 1);
+            --color-cream-100: rgba(255, 255, 253, 1);
+            --color-gray-200: rgba(245, 245, 245, 1);
+            --color-gray-300: rgba(167, 169, 169, 1);
+            --color-gray-400: rgba(119, 124, 124, 1);
+            --color-slate-500: rgba(98, 108, 113, 1);
+            --color-brown-600: rgba(94, 82, 64, 1);
+            --color-charcoal-700: rgba(21, 33, 33, 1);
+            --color-charcoal-800: rgba(38, 40, 40, 1);
+            --color-slate-800: rgba(19, 52, 59, 1);
+            --color-teal-300: rgba(50, 184, 198, 1);
+            --color-teal-400: rgba(45, 166, 178, 1);
+            --color-teal-500: rgba(33, 128, 141, 1);
+            --color-teal-600: rgba(29, 116, 128, 1);
+            --color-teal-700: rgba(26, 104, 115, 1);
+            --color-teal-800: rgba(26, 104, 115, 1);
+            --color-red-400: rgba(255, 84, 85, 1);
+            --color-red-500: rgba(192, 21, 47, 1);
+            --color-orange-400: rgba(230, 129, 97, 1);
+            --color-orange-500: rgba(168, 75, 47, 1);
+            --color-brown-600-rgb: 94, 82, 64;
+            --color-teal-500-rgb: 33, 128, 141;
+            --color-slate-900: rgba(19, 52, 59, 1);
+            --color-text-secondary: var(--color-slate-500);
+            --color-primary: var(--color-teal-500);
+            --color-primary-hover: var(--color-teal-600);
+            --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+            --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-card-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --color-error: var(--color-red-500);
+            --color-warning: var(--color-orange-500);
+            --color-bg-1: rgba(59, 130, 246, 0.08);
+            --color-bg-2: rgba(245, 158, 11, 0.08);
+            --color-bg-3: rgba(34, 197, 94, 0.08);
+            --color-bg-4: rgba(239, 68, 68, 0.08);
+            --color-bg-5: rgba(147, 51, 234, 0.08);
+            --color-bg-6: rgba(6, 182, 212, 0.08);
+            --color-bg-7: rgba(236, 72, 153, 0.08);
+            --color-bg-8: rgba(6, 182, 212, 0.08);
+            --color-background: var(--color-cream-50);
+            --color-surface: var(--color-white);
+            --color-text: var(--color-charcoal-700);
+            --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.02);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background: var(--color-background);
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--color-charcoal-700);
+        }
+
+        .subtitle {
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-card-border);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--color-charcoal-700);
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color-gray-200);
+            font-size: 0.875rem;
+        }
+
+        .card li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Симптомы и синдромы в зависимости — Обзор 2020–2025 гг.</h1>
+        <p class="subtitle">Комплексный обзор клинических проявлений</p>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background: var(--color-bg-1);">🧠</div>
+                    <h3>Когнитивные нарушения</h3>
+                </div>
+                <ul>
+                    <li>Снижение внимания и концентрации</li>
+                    <li>Нарушения памяти</li>
+                    <li>Трудности принятия решений</li>
+                    <li>Снижение критики к своему состоянию</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background: var(--color-bg-2);">😰</div>
+                    <h3>Эмоциональные расстройства</h3>
+                </div>
+                <ul>
+                    <li>Тревога и беспокойство</li>
+                    <li>Депрессивные состояния</li>
+                    <li>Эмоциональная лабильность</li>
+                    <li>Раздражительность</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background: var(--color-bg-3);">💚</div>
+                    <h3>Мотивационные изменения</h3>
+                </div>
+                <ul>
+                    <li>Патологическое влечение</li>
+                    <li>Утрата интересов</li>
+                    <li>Снижение волевых качеств</li>
+                    <li>Компульсивное поведение</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background: var(--color-bg-4);">⚠️</div>
+                    <h3>Абстинентный синдром</h3>
+                </div>
+                <ul>
+                    <li>Физический дискомфорт</li>
+                    <li>Вегетативные нарушения</li>
+                    <li>Психомоторное возбуждение</li>
+                    <li>Нарушения сна</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background: var(--color-bg-5);">🔄</div>
+                    <h3>Синдром зависимости</h3>
+                </div>
+                <ul>
+                    <li>Рост толерантности</li>
+                    <li>Потеря контроля над употреблением</li>
+                    <li>Продолжение употребления несмотря на последствия</li>
+                    <li>Сужение репертуара употребления</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background: var(--color-bg-6);">👥</div>
+                    <h3>Социальные нарушения</h3>
+                </div>
+                <ul>
+                    <li>Конфликты в семье</li>
+                    <li>Проблемы на работе/учёбе</li>
+                    <li>Изоляция от общества</li>
+                    <li>Правовые проблемы</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background: var(--color-bg-7);">🩺</div>
+                    <h3>Соматические осложнения</h3>
+                </div>
+                <ul>
+                    <li>Поражение печени</li>
+                    <li>Сердечно-сосудистые нарушения</li>
+                    <li>Неврологические расстройства</li>
+                    <li>Иммунные нарушения</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background: var(--color-bg-8);">📊</div>
+                    <h3>Коморбидные состояния</h3>
+                </div>
+                <ul>
+                    <li>Депрессивные расстройства</li>
+                    <li>Тревожные расстройства</li>
+                    <li>Расстройства личности</li>
+                    <li>Психотические состояния</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
